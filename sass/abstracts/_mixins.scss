@@ -1,0 +1,48 @@
+@mixin styledec {
+    text-decoration: none;
+    list-style: none;
+}
+
+@mixin before { //this and linkvisited mixins related for hover effect which slides left from right primary color
+    content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 3px;
+                background-color: $color-primary;
+                color: $color-primary;
+                transform: scaleY(0);
+                transition: transform .2s,
+                            width .4s cubic-bezier(1,0,0,1) .2s;
+}
+
+@mixin linkvisited {
+                cursor: none;
+                text-decoration: none;
+                text-transform: uppercase;
+                color: $color-primary;
+                position: relative;
+                z-index: 10;
+                transition: color 2s;
+}
+
+
+//ORDER: base + typography > general layout > grid > page layout > components
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em) { @content }; //600px
+    }
+
+    @if $breakpoint == tab-port {
+        @media (max-width: 56.25em) { @content }; //900px
+    }
+
+    @if $breakpoint == tab-land {
+        @media (max-width: 75em) { @content }; //1200px
+    }
+
+    @if $breakpoint == big-desktop {
+        @media (min-width: 112.5em) { @content }; //1800px
+    }
+}

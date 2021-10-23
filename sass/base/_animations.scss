@@ -1,0 +1,22 @@
+@keyframes moveLeftRight {
+        0% {
+            opacity: 0;
+            transform: translateX(var(--leftright)); //this var will defines before the animation prop
+        }
+        
+        100% {
+            opacity: 1;
+        }
+}
+
+@keyframes moveUpDown {
+    0% {
+        opacity: 0;
+        transform: translateY(var(--updown)); //this var will defines before the animation prop
+    }
+    
+    100% {
+        opacity: 1;
+    }
+}
+

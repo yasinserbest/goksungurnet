@@ -1,0 +1,130 @@
+.contact {
+    display: flex;
+    background-color: $color-section;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+
+    @include respond(tab-port) { 
+        flex-direction: column;
+    }
+    
+    &__boxes {
+        flex: 40%;
+        flex-shrink: 2;
+        display: grid;
+        grid-template-rows: 24rem 24rem;
+        grid-template-columns: 24rem 24rem;
+        justify-content: flex-end;
+        grid-gap: 2rem;
+        position: relative;
+        left: 14rem;
+        
+                @include respond(tab-port) { 
+                left: 0;
+                flex: 100%;
+                padding: 5rem 0;
+                }
+
+                @include respond(phone) { 
+                grid-template-rows: 24rem 24rem 24rem 24rem;
+                grid-template-columns: 24rem;
+                }
+
+    }
+
+    &__box {
+        background-color: white;
+        text-align: center;
+        padding: 0rem;
+        border-radius: 4px;
+        &--logo {
+            color: $color-primary;
+            font-size: 7.5rem;
+
+            &-social {
+                color: $color-primary;
+                font-size: 8rem;
+                margin-top: 1rem;
+
+                & a {
+                    color: $color-primary;
+                }
+            }
+        }
+
+        &--title {
+            font-size:2rem;
+            margin-top: 1.2rem;
+            font-weight: 400;
+            
+        }
+
+        &--detail {
+            font-size: 2rem;
+            margin-top: 1rem;
+            font-weight: 300;
+        }
+    }
+
+    &__form {
+        flex: 60%;
+        background-color: $color-primary;
+        margin: 10rem;
+        align-self: flex-start;
+        padding: 10rem;
+        padding-right: 4rem;
+        text-align: center;
+        border-radius: 4px;
+
+        @include respond(tab-port) { 
+            left: 0;
+            flex: 100%;
+            margin: 0 auto 5rem auto;
+        }
+
+        @include respond(phone) { 
+            padding: 5rem;
+            margin: 5rem 3rem 5rem 3rem;
+            align-self: center;
+            
+        }
+            
+            
+        &--title {
+            margin-bottom: 4rem;
+            font-size: 7rem;
+            color: white;
+            font-family: 'Great Vibes', cursive;
+            font-weight: bold;
+        }
+
+        &--input {
+            
+
+            &-area {
+            
+            }
+        }
+
+        &--button {
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            outline-style: none;
+            border: none;
+            border-radius: 3px;
+            background-color: white;
+            color: $color-primary;
+            font-weight: bold;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        
+    }
+
+
+}

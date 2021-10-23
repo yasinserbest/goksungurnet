@@ -1,0 +1,122 @@
+.about {
+    display: flex;
+    padding: 2rem 9rem;
+    position: relative;
+    font-family: 'Open Sans', sans-serif;
+    background-color: $color-section;
+    padding-bottom: 9rem;
+
+    
+
+    @include respond(tab-port) { 
+        flex-direction: column;
+        padding: 2rem 4rem;
+        padding-right: 1rem;
+    }
+    
+    &__me {
+        flex: 60%;
+        font-size: 2.7rem;
+        line-height: 4.2rem;
+        --leftright: -3.6rem;
+        animation: moveLeftRight 1s ease-out .4s backwards;
+
+        @include respond(tab-port) { 
+            flex: 100%;
+            padding-bottom: 5rem;
+            margin-bottom: 5rem;
+            border-bottom: 3px solid rgba($color-primary, .3);
+        }
+
+          
+        
+        
+        &::first-letter {
+            color: $color-primary;
+            font-size: 10rem;
+            text-shadow: 5px 5px $color-grey-light-2;
+            
+        }
+        
+
+        &--rounded {
+        width: 19.2rem;
+        height: 19.2rem;
+        background-color: orangered;
+        float: left;
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(48% at 47% 20%); //bu kod metnin daire etrafında bir hilal gibi şekillenmesini sağladı.ve bu özellik sadece element float olduğunda çalışıyor. ders42
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        position: relative;
+        top: -5rem;
+        left: -3rem;
+        
+        }
+        
+        
+        &--photo {
+            height: 100%;
+
+            &:hover {
+                
+            }
+        }
+    }
+
+    &__projects {
+        flex: 40%;
+        font-size: 2.5rem;
+        padding-left: 4.3rem;
+        font-weight: 300;
+        --leftright: 3.6rem;
+        animation: moveLeftRight 1s ease-out .4s backwards;
+
+        @include respond(tab-port) { 
+            flex: 100%;
+            padding-left: 0;
+        }
+
+        // @include respond(phone) { 
+        //     font-size: 130% !important;
+        //     line-height: 2.2rem;
+        // }
+
+        &--container {
+            box-shadow: 1rem 3rem 6rem rgba($color-primary, .1);
+            margin-bottom: 4rem;
+            position: relative;
+
+            @include respond(phone) { 
+                margin-bottom: 2rem;
+            }
+        }
+        
+        &--title {
+            color: $color-primary;
+            margin-bottom: .5rem;
+            text-transform: uppercase;
+            font-weight: 400;
+            text-shadow: 5px 5px $color-grey-light-2;
+            
+        }
+
+        &--badge {
+            background-color: $color-primary;
+            opacity: .8;
+            position: absolute;
+            right: 0;
+            top: -2rem;
+            box-shadow: 1rem 3rem 2rem rgba(#000000, .1);
+            display: inline-block;
+            color: white;
+            padding: 0.2rem 0.2rem 4rem 0.2rem;
+            clip-path: polygon(100% 0, 100% 50%, 100% 100%, 50% 57%, 0 100%, 0% 0%);
+        }
+
+        &--detail {
+
+        }
+
+    }
+}

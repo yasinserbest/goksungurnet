@@ -1,0 +1,74 @@
+.header {
+    background-image: linear-gradient(
+        to right,
+        rgba($color-primary-light,0.7),
+        rgba($color-primary-dark,0.7)),
+        url(../../img/hedaer2.jpeg);
+    
+    height: 65vh;
+    background-size: cover;
+    background-position: top;
+    
+    font-family: 'Libre Baskerville', serif;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+
+    
+
+    &__text-box {
+    
+        
+        color: white;
+        
+        
+    }
+
+    &__primary {
+        --leftright: -4rem;
+        animation: moveLeftRight 1s ease-out 1.2s backwards;
+        padding: 2rem;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+        text-align: center;
+
+        
+
+        &--items {
+            
+            text-decoration: none;
+            display: flex;
+            justify-content: space-around;
+            
+            
+        }
+
+        &--item-1 {
+            @include styledec;
+            --leftright: -1.6rem;
+            animation: moveLeftRight 1s ease-out .9s backwards;
+            
+        }
+        &--item-2 {
+            @include styledec;
+            --leftright: -1.4rem;
+            animation: moveLeftRight 1s ease-out .6s backwards;
+         }
+         &--item-3 {
+            @include styledec;
+            --leftright: -1.2rem;
+            animation: moveLeftRight 1s ease-out .3s backwards;
+            
+         }
+         &--item-4 {
+            @include styledec;
+            --leftright: -1rem;
+            animation: moveLeftRight 1s ease-out  backwards;
+         }
+         
+    }
+
+
+}

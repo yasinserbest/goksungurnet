@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+
+}
+
+html {
+    //this is defines what 1rem is
+    font-size: 62.5%; //i want it to be  10 px. so 10px/16=62.5 
+
+    @include respond(tab-land) {
+        font-size: 56.25%; // 9/16 = 56.25%  
+    }
+    @include respond(tab-port) { 
+        font-size: 50%; // 8/16 = 50% 
+    }
+    @include respond(phone) { 
+        font-size: 50%; // 8/16 = 50% 
+    }
+    @include respond(big-desktop) {
+        font-size: 75%; // 12/16 = 75%
+    }
+}
+.container {
+    margin-left:4vw;
+    color: black;
+
+    @include respond(phone) { 
+        margin-left: 7vw;
+       
+    }
+    
+}

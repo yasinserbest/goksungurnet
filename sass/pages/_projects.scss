@@ -1,0 +1,80 @@
+.projects {
+    padding-bottom: 6rem;
+    background-color: $color-section;
+
+    &__container {
+        display: flex;
+        padding: 3rem;
+
+
+        @include respond(tab-port) { 
+            flex-direction: column;
+            
+            border-bottom: 3px double rgba($color-primary, .3);
+           
+        }
+        
+        &--pic {
+            flex: 40%;
+            align-self: center;
+            --updown: 1.9rem;
+            animation: moveUpDown 1s ease-out .2s backwards;
+
+            @include respond(tab-port) { 
+                flex: 100;
+                text-align: center;
+            }
+            
+            
+            & img {
+                width: 100%;
+                border-radius: 1.2rem;
+
+                
+            }
+        }
+
+        &--detail{
+            flex: 60%;
+            font-family: 'Open Sans', sans-serif;
+            padding: 2rem;
+            --updown: -1.9rem;
+            animation: moveUpDown 1s ease-out .2s backwards;
+            
+            
+            &-title{
+                display: inline-block;
+                font-size: 3rem;
+                position: relative;  
+            }
+
+            &-title::before{
+                @include before;
+                            
+            }
+     
+            &:hover &-title::before{
+                transform: scaleY(1);
+                width: 100%;
+                
+            }
+            &-link:link,
+            &-link:visited{
+                @include linkvisited;
+            }
+            &:hover &-link {
+                color: white;
+            }
+
+            
+
+            &-desc{
+                font-weight: 300;
+                font-size: 2rem;
+                line-height: 3rem;
+                letter-spacing: 1px;
+                
+            }
+        }
+    }
+}
